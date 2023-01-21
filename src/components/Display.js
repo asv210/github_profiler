@@ -2,8 +2,8 @@ import React, { Link } from "react";
 
 const Display = (props) => {
   return (
-    <div className="mx-36 my-16 bg-black text-white">
-      <div className=" justify-center py-5 text-center">
+    <div className="mt-16 bg-black text-white">
+      <div className=" justify-center py-5  text-center">
         <h1 className="font-serif text-xl font-bold">Username</h1>
 
         <h3 className="font-mono text-lg">{props.nam.login}</h3>
@@ -11,19 +11,8 @@ const Display = (props) => {
         <div className="flex justify-center mb-4">
           <img src={props.nam.avatar_url} alt="" className="w-56 h-56 " />
         </div>
-
-        {/* <h1 className="alogn-middle">{props.nam.name}</h1>
-        <h1 className="alogn-middle w-6 text-center">{props.nam.following}</h1>
-        <h1 className="alogn-middle" w-6>
-          {props.nam.followers}
-        </h1>
-        <h1 className="alogn-middle">{props.nam.created_at}</h1>
-        <h1 className="alogn-middle">{props.nam.updated_at}</h1>
-        <h1 className="alogn-middle">{props.nam.location}</h1>
-        <h1 className="alogn-middle">{props.nam.email}</h1>
-        <h1 className="alogn-middle">{props.nam.public_repos}</h1> */}
       </div>
-      <div className="flex-col">
+      <div className="flex-col overflow-auto">
         <div>
           <table className="table-auto w-full border-collapse border-solid  border-slate-500">
             <thead>
@@ -35,10 +24,6 @@ const Display = (props) => {
                   Number of Repositories
                 </th>
                 <th className="border border-slate-600">Twitter</th>
-                {/* <th className="border w-52 border-slate-600">Mail id</th>
-                <th className="border border-slate-600">
-                  Updated data and time
-                </th> */}
               </tr>
             </thead>
             <tbody className="text-center">
@@ -64,10 +49,6 @@ const Display = (props) => {
                     ? props.nam.twitter_username
                     : "Not mentioned"}
                 </td>
-                {/* <td className="border border-slate-600">{props.nam.email}</td>
-                <td className="border border-slate-600">
-                  {props.nam.updated_at}
-                </td> */}
               </tr>
               <tr className="h-14 font-semibold ">
                 <td className="border border-slate-600">
@@ -130,7 +111,7 @@ const Display = (props) => {
             </tbody>
           </table>
         </div>
-        <div className="py-10 flex justify-center">
+        <div className="py-10 flex-col justify-center">
           <table className="table-auto w-full border-collapse border-solid  border-slate-500">
             <thead>
               <tr className="h-16">
@@ -175,33 +156,10 @@ const Display = (props) => {
                     : "Not mentioned"}
                 </td>
               </tr>
-              {/* <tr className="h-20 font-semibold ">
-                <td className="border border-slate-600">
-                  <a href={props.nam.html_url} className="text-green-400">
-                    More info.
-                  </a>
-                </td>
-               
-                <td className="border border-slate-600">
-                  <a
-                    href={props.nam.html_url + "?tab=followers"}
-                    className="text-green-400"
-                  >
-                    Followers list
-                  </a>
-                </td>
-                <td className="border border-slate-600">
-                  <a
-                    href={props.nam.html_url + "?tab=repositories"}
-                    className="text-green-400"
-                  >
-                    Repositories list
-                  </a>
-                </td> */}
-              {/* </tr> */}
             </tbody>
           </table>
         </div>
+
         <div className="py-10 flex justify-center">
           <table className="table-auto w-full border-collapse border-solid  border-slate-500">
             <thead>
