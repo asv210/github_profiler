@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import pic from "./image/git.png";
 import Display from "./Display";
 import "../index.css";
-import pic from "./image/git.png";
 const Search = () => {
   const [userName, setUserName] = useState("");
   const [data, setData] = useState({});
@@ -25,9 +25,9 @@ const Search = () => {
   };
   return (
     <div>
-      <div className="flex-row mx-2">
+      <div className="md:mx-20 lg:mx-36 flex-row ">
         <img src={pic} alt="" className="mx-auto" />
-        <h1 className="font-mono text-lg font-extrabold my-5">
+        <h1 className="font-mono text-lg font-extrabold my-5 md:text-4xl md:my-12">
           Enter Github User Profile here
         </h1>
         <form
@@ -36,17 +36,17 @@ const Search = () => {
           autoComplete="off"
           onSubmit={onSubmitHandler}
         >
-          <div className="my-4">
+          <div className="my-9">
             <input
               type="text"
-              className="w-full border-slate-900 h-10 font-sans rounded-2xl pl-5 border"
+              className="w-9/12 border-slate-900 h-10 font-sans rounded-2xl pl-5 border"
               placeholder="Search here"
               value={userName}
               onChange={onChangeHandler}
             />
           </div>
-          <div className="my-4">
-            <button className="bg-sky-600 px-10 py-4 font-bold font-neutral-400 text-white rounded-full hover:bg-zinc-200 hover:text-sky-800">
+          <div className=" my-4 md:my-9">
+            <button className="bg-sky-600 px-10 md:px-12 py-4 font-bold font-neutral-400 text-white rounded-full hover:bg-zinc-200 hover:text-sky-800">
               Search
             </button>
           </div>
