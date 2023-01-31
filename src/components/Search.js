@@ -12,16 +12,27 @@ const Search = () => {
   };
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    setshow(true);
-    fetch(`https://api.github.com/users/${userName}`)
-      .then((result) => {
-        return result.json();
-        // console.log(result.json());
-      })
-      .then((value) => {
-        console.log(value);
-        setData(value);
-      });
+    if (userName !== "") {
+      fetch(`https://api.github.com/users/${userName}`)
+        .then((result) => {
+          return result.json();
+          // console.log(result.json());
+        })
+        .then((value) => {
+          console.log(value);
+          if (value.message === "Not Found") {
+            alert("invalid username");
+            setUserName("");
+          } else {
+            setshow(true);
+            setData(value);
+            setUserName("");
+          }
+        });
+    } else {
+      alert("Please Enter Username");
+      setUserName("");
+    }
   };
   return (
     <div>
