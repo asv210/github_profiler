@@ -53,7 +53,9 @@ const Display = (props) => {
               <tr className="h-14 font-semibold ">
                 <td className="border border-slate-600">
                   <a
-                    href={props.nam.html_url > 0 ? props.nam.html_url : "/"}
+                    href={
+                      props.nam.html_url != undefined ? props.nam.html_url : "/"
+                    }
                     className="text-green-400"
                   >
                     More info.
@@ -62,7 +64,7 @@ const Display = (props) => {
                 <td className="border border-slate-600">
                   <a
                     href={
-                      props.nam.html_url > 0
+                      props.nam.html_url != undefined
                         ? props.nam.html_url + "?tab=following"
                         : "/"
                     }
@@ -74,7 +76,7 @@ const Display = (props) => {
                 <td className="border border-slate-600">
                   <a
                     href={
-                      props.nam.html_url > 0
+                      props.nam.html_url != undefined
                         ? props.nam.html_url + "?tab=followers"
                         : "/"
                     }
@@ -86,7 +88,7 @@ const Display = (props) => {
                 <td className="border border-slate-600">
                   <a
                     href={
-                      props.nam.html_url > 0
+                      props.nam.html_url != undefined
                         ? props.nam.html_url + "?tab=repositories"
                         : "/"
                     }
@@ -98,9 +100,10 @@ const Display = (props) => {
                 <td className="border border-slate-600">
                   <a
                     href={
-                      "https://twitter.com/" + props.nam.twitter_username > 0
+                      "https://twitter.com/" +
+                      (props.nam.twitter_username != undefined
                         ? props.nam.twitter_username
-                        : ""
+                        : "")
                     }
                     className="text-green-400"
                   >
@@ -130,28 +133,30 @@ const Display = (props) => {
             <tbody className="text-center">
               <tr className="h-14">
                 <td className="border border-slate-600 ">
-                  {props.nam.email > 0 ? props.nam.email : "Not mentioned"}
+                  {props.nam.email != undefined
+                    ? props.nam.email
+                    : "Not mentioned"}
                 </td>
                 <td className="border border-slate-600 ">
-                  {props.nam.location > 0
+                  {props.nam.location != undefined
                     ? props.nam.location
                     : "Not mentioned"}
                 </td>
                 <td className="border w-10 border-slate-600">
                   <a
-                    href={props.nam.blog > 0 ? props.nam.blog : "/"}
+                    href={props.nam.blog != undefined ? props.nam.blog : "/"}
                     className="text-green-400"
                   >
                     Blog link
                   </a>
                 </td>
                 <td className="border w-36 border-slate-600">
-                  {props.nam.created_at > 0
+                  {props.nam.created_at != undefined
                     ? props.nam.created_at
                     : "Not mentioned"}
                 </td>
                 <td className="border w-36 border-slate-600">
-                  {props.nam.updated_at > 0
+                  {props.nam.updated_at != undefined
                     ? props.nam.updated_at
                     : "Not mentioned"}
                 </td>
@@ -168,7 +173,9 @@ const Display = (props) => {
               </tr>
             </thead>
             <tbody className="text-center">
-              <tr>{props.nam.bio > 0 ? props.nam.bio : "Not mentioned"}</tr>
+              <tr>
+                {props.nam.bio != undefined ? props.nam.bio : "Not mentioned"}
+              </tr>
             </tbody>
           </table>
         </div>
